@@ -1,8 +1,9 @@
 .sidebar-button{
     display: flex;
+    align-content: space-evenly;
     align-items: center;
     gap: 10px;
-    width: 90%;
+    width: 100%;
     background: none;
     border: none;
     color: #cbd5e1;
@@ -17,11 +18,12 @@
 
 .sidebar-button:hover{
     background-color: #2563eb;
-    color: white;
+    color: #FFFCF5;
 }
 
 .icon{
     font-size: 18px;
     display: flex;
     align-items: center;
+    justify-content: left;
 }

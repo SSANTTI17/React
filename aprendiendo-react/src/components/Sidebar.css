@@ -1,7 +1,21 @@
 .sidebar {
-    width: 250px;
+    width: 50px;
     background-color: #111827;
     display: flex;
+    place-items: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    height: 100vh;
+    color: white;
+    transition: all 0.2s ease;
+}
+.sidebar:hover {
+    width: 250px;
+    transition: all 0.2s ease;
+    background-color: #111827;
+    display: flex;
+    place-items: center;
     flex-direction: column;
     align-items: center;
     padding: 20px 0;
@@ -10,7 +24,12 @@
 }
 
 .profile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;    
     text-align: center;
+    align-items: stretch;
     margin-bottom: 40px;
 }
 
@@ -24,22 +43,10 @@
 .menu{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    justify-items: stretch;
+    align-content: center;
+    align-items: stretch;
     width: 100%;
     gap: 10px;
 }
-
-.menu button{
-    background: none;
-    border: none;
-    color: #FFFCF5;
-    text-align: center;
-    padding: 10px, 20px;
-    cursor: pointer;
-    transition: background 0.3s;
-    font-size: 15px;
-}
-
-.menu buton:hover{
-    background-color: #1e293b;
-}
-
