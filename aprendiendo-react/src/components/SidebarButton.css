@@ -1,0 +1,27 @@
+.sidebar-button{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 90%;
+    background: none;
+    border: none;
+    color: #cbd5e1;
+    font-size: 15px;
+    text-align: center;
+    padding: 10px 15px;
+    margin: 5px auto;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.sidebar-button:hover{
+    background-color: #2563eb;
+    color: white;
+}
+
+.icon{
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
