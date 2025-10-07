@@ -1,22 +1,27 @@
-import React from "react";
-import "./Sidebar.css";
+import React, { useState } from "react";
 import SidebarButton from "./SidebarButton";
-
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import PeopleIcon from "@mui/icons-material/People";
 import ContactsIcon from "@mui/icons-material/Contacts";
 import ReceiptLongIcon from "@mui/icons-material/ReceiptLong";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
+import "./Sidebar.css";
+
 export default function Sidebar(){
+  const [isExpanded, setIsExpanded]=useState(false);
     return (
-      <aside className="sidebar">
+      <aside className={`sidebar ${isExpanded?"expanded":"collapsed"}`}
+        onMouseEnter={() => setIsExpanded(true)}
+        onMouseLeave={() => setIsExpanded(false)}
+      >
         <div className="profile">
           <img
-            src="https://via.placeholder.com/1"
+            src="https://via.placeholder.com/60"
             alt="Perfil"
             className="avatar"
           />
+
           <h3>Nombre Apellido</h3>
           <p>Texto vario</p>
         </div>
