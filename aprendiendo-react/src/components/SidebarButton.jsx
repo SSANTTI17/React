@@ -1,11 +1,14 @@
 import React from "react";
 import "./SidebarButton.css";
 
-export default function SidebarButton({ text, icon, active }) {
+export default function SidebarButton({ text, icon, active, onClick }) {
   return (
-    <button className={`sidebar-button ${active ? "active" : ""}`}>
+    <button
+      className={`sidebar-button ${active ? "active" : ""}`}
+      onClick={onClick}
+    >
       {icon && <span className="icon">{icon}</span>}
-      <span className="text">{text}</span>
+      {text && <span className="text">{text}</span>}
     </button>
   );
 }

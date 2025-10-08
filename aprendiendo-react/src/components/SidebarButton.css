@@ -1,8 +1,7 @@
 .sidebar-button{
     display: flex;
-    align-content: space-evenly;
     align-items: center;
-    gap: 10px;
+    align-content: space-evenly;
     width: 100%;
     background: none;
     border: none;
@@ -14,6 +13,7 @@
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.2s ease;
+    /* border: 1px solid red; */
 }
 
 .sidebar-button:hover{
@@ -21,9 +21,42 @@
     color: #FFFCF5;
 }
 
+.sidebar:not(:hover) .sidebar-button {
+  justify-content: center;
+  padding: 5px 5px;
+}
+
+.sidebar-button.active{
+    background-color: #1e3a8a;
+    color: #f8fafc;
+    border-left: 2px solid #2563eb;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.sidebar-button.active:hover {
+    background-color: #1e40af;
+}
+
 .icon{
     font-size: 18px;
     display: flex;
     align-items: center;
-    justify-content: left;
+    justify-content: center;
+    transition: all 0.25s ease;
+    /* border: 1px dashed lime; */
+}
+
+.text{
+    opacity: 0;
+    max-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: all 0.25s ease;
+}
+
+.sidebar:hover .text {
+  opacity: 1;
+  max-width: 200px;
+  margin-left: 5px;
 }

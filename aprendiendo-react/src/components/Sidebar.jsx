@@ -9,46 +9,36 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import "./Sidebar.css";
 
 export default function Sidebar(){
-  const [isExpanded, setIsExpanded]=useState(false);
-    return (
-      <aside className={`sidebar ${isExpanded?"expanded":"collapsed"}`}
-        onMouseEnter={() => setIsExpanded(true)}
-        onMouseLeave={() => setIsExpanded(false)}
-      >
-        <div className="profile">
-          <img
-            src="https://via.placeholder.com/60"
-            alt="Perfil"
-            className="avatar"
-          />
+  // const [isExpanded, setIsExpanded]=useState(false);
+  const buttons = [
+    { text: "Profile", icon: <AccountCircleIcon /> },
+    { text: "Dashboard", icon: <DashboardIcon /> },
+    { text: "Manage Team", icon: <PeopleIcon /> },
+    { text: "Contacts", icon: <ContactsIcon /> },
+    { text: "Invoices", icon: <ReceiptLongIcon /> },
+  ];
+  const [activeIndex, setActiveIndex] = useState(
+    Number(localStorage.getItem("activeIndex")) || 0
+  );
+  return (
+    <aside className="sidebar">
+      <div className="profile">
+        <div className="avatar"></div>
+        <h3>Apellido Nombre</h3>
+        <p>Texto Adicional</p>
+      </div>
 
-          <h3>Nombre Apellido</h3>
-          <p>Texto vario</p>
-        </div>
-        <nav classname="menu">
+      <nav className="menu">
+        {buttons.map((btn, index) => (
           <SidebarButton
-            classname="menuButton"
-            text="Profile"
-            icon={<AccountCircleIcon />}
-            active="active"
+            key={index}
+            text={btn.text}
+            icon={btn.icon}
+            active={activeIndex === index}
+            onClick={() => setActiveIndex(index)}
           />
-          <SidebarButton
-            text="Dashboard"
-            icon={<DashboardIcon />}
-            active="active"
-          />
-          <SidebarButton text="Manage Team" icon={<PeopleIcon />} active="" />
-          <SidebarButton
-            text="Contacts"
-            icon={<ContactsIcon />}
-            active="active"
-          />
-          <SidebarButton
-            text="Invoices"
-            icon={<ReceiptLongIcon />}
-            active="active"
-          />
-        </nav>
-      </aside>
-    );
+        ))}
+      </nav>
+    </aside>
+  );
 }

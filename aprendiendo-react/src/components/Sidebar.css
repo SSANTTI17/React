@@ -2,35 +2,39 @@
     width: 50px;
     background-color: #111827;
     display: flex;
-    place-items: center;
     flex-direction: column;
     align-items: center;
-    padding: 20px 0;
+    justify-content: flex-start;
     height: 100vh;
     color: white;
-    transition: all 0.2s ease;
+    padding-top: 20px;
+    transition: width 0.2s ease;
+    place-items: center;
 }
 .sidebar:hover {
     width: 250px;
     transition: all 0.2s ease;
-    background-color: #111827;
-    display: flex;
-    place-items: center;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 0;
-    height: 100vh;
-    color: white;
 }
 
 .profile{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-items: center;    
+    flex-direction: column;  
+    align-items: center;
     text-align: center;
-    align-items: stretch;
     margin-bottom: 40px;
+}
+
+.profile h3,
+.profile p {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.sidebar:hover .profile h3,
+.sidebar:hover .profile p {
+  opacity: 1;
+  max-height: 100px;
 }
 
 .avatar{
@@ -38,6 +42,16 @@
     height: 80px;
     border-radius: 50%;
     margin-bottom: 10px;
+    background-color: #fffcf5;
+    transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
+}
+
+.sidebar:not(:hover) .avatar {
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 
 .menu{
@@ -47,6 +61,6 @@
     justify-items: stretch;
     align-content: center;
     align-items: stretch;
-    width: 100%;
+    width: 75%;
     gap: 10px;
 }
